@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bark Byte & Bistro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.1001fonts.com/black-and-bitter-coffee-font.html">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--home section-->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Bark Byte & Bistro</h1>
+            <p>Caring for our Furry friends. Join Us!</p>
+        </div>
+    </section>
+
+    <!--about section-->
+    <section id="about">
+        <h2>About Us </h2>
+        <p>the business aims to offer a sense of comfort and involvement to the community by 
+            <br> encouraging active participation in animal welfare initiatives, both online and offline. 
+            <br>Through these efforts, the business strives to create a positive and lasting impact on the lives of animals and foster a compassionate environment for all.</p>
+    </section>
+
+    <!--services section-->
+    <section id="services">
+        <h2>Our services</h2>
+        <div class="service">
+            <h3>Bark</h3>
+            <p>we offer pet care services, serving as vigilant caregivers and monitors for local animals. Our grooming services and day care facilities ensure that pets are well cared for in a safe and nurturing environment.</p>
+
+        </div>
+        <div class="service">
+            <h3>Bark</h3>
+            <p>Our cyberzone provides a productive environment where customers can accomplish tasks while enjoying a cup of hot coffee with a picturesque view of the local surroundings.</p>
+        </div>
+        <div class="service">
+            <h3>Bark</h3>
+            <p>we operate a dining cafe-restaurant where pet owners and customers can enjoy a nature-inspired ambiance, fostering opportunities for bonding and engagement.</p>
+        </div>
+    </section>
+
+    <!--contact section-->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" required id="email">
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+
+            <button type="submit">submit</button>
+        </form>
+
+    </section>
+    <footer>
+        <p> LEA FRANKIE PICARDO | ALL RIGHTS RESERVED.</p>
+    </footer>
+</body>
+</html>
