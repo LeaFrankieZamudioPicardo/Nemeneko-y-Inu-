@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Eleceed Library</h1>
+    </header>
+    <main>
+        <section id="add-game">
+            <h2>Eleceed</h2>
+            <form id="game-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="chapter">Chapter:</label>
+                <select id="chapter" name="chapter" required>
+                    <option value="">Select a chapter</option>
+                    <!-- Generate options for chapters 1 to 150 -->
+                    <script>
+                        for (let i = 1; i <= 150; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+                <label for="release-date">Release Date:</label>
+                <input type="date" id="release-date" name="release-date" required>
+                <label for="image-file">Choose Image:</label>
+                <input type="file" id="image-file" name="image-file" accept="image/*">
+                <button type="submit">Read the Chapter</button>
+            </form>
+        </section>
+        <section id="game-container">
+            <div id="game-list">
+                <!-- Game list will be populated here -->
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+  <p>&copy; 2021 Eleceed Library</p>
+</footer>
+</html>
