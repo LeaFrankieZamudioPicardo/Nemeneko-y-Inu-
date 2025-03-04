@@ -153,3 +153,179 @@
   <p>&copy; 2021 Eleceed Library</p>
 </footer>
 </html>
+
+<!--script-->
+document.addEventListener('DOMContentLoaded', () => {
+    const gameForm = document.getElementById('game-form');
+    const gameList = document.getElementById('game-list');
+
+    gameForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = document.getElementById('title').value;
+        const chapter = document.getElementById('chapter').value;
+        const releaseDate = document.getElementById('release-date').value;
+        const imageFile = document.getElementById('image-file').files[0];
+
+        if (imageFile) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageUrl = e.target.result;
+                addGameToList(title, chapter, releaseDate, imageUrl);
+            };
+            reader.readAsDataURL(imageFile);
+        } else {
+            addGameToList(title, chapter, releaseDate, '');
+        }
+
+        gameForm.reset();
+    });
+
+    function addGameToList(title, chapter, releaseDate, imageUrl) {
+        const gameCard = document.createElement('div');
+        gameCard.classList.add('game-card');
+        gameCard.innerHTML = `
+            <div>
+                ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="game-image">` : ''}
+                <h3>${title}</h3>
+                <p>Chapter: ${chapter}</p>
+                <p>Release Date: ${releaseDate}</p>
+            </div>
+            <div>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        `;
+        gameList.appendChild(gameCard);
+
+        const editBtn = gameCard.querySelector('.edit-btn');
+        const deleteBtn = gameCard.querySelector('.delete-btn');
+
+        editBtn.addEventListener('click', () => editGame(gameCard, title, chapter, releaseDate, imageUrl));
+        deleteBtn.addEventListener('click', () => deleteGame(gameCard));
+    }
+
+    function editGame(gameCard, title, chapter, releaseDate, imageUrl) {
+        document.getElementById('title').value = title;
+        document.getElementById('chapter').value = chapter;
+        document.getElementById('release-date').value = releaseDate;
+        gameCard.remove();
+    }
+
+    function deleteGame(gameCard) {
+        gameCard.remove();
+    }
+});
+
+<!--style.css-->
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('eh.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: rgb(247, 164, 82);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#add-game {
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+#add-game form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-game label {
+    margin-top: 0.5rem;
+}
+
+#add-game input,
+#add-game select {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#add-game button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#add-game button:hover {
+    background-color: orange;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1rem;
+}
+
+#game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.game-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    margin: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.game-card button {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.game-card button:hover {
+    background-color: #555;
+}
+
+.game-card .game-image {
+    width: 80px;
+    height: auto;
+}
+
+.game-item .select-btn {
+    background-color: #007bff;
+}
+
+.game-item .select-btn:hover {
+    background-color: #0056b3;
+}
+
